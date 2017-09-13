@@ -1,0 +1,10 @@
+{
+    "name": "www",
+    "authors": [{
+        "name": "Pierrick Brun",
+        "email": "contact@pierrickbrun.me"
+    }],
+    "require": {
+        "predis/predis": "dev-master"
+    }
+}

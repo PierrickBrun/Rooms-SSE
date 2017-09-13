@@ -1,0 +1,20 @@
+{
+  "name": "rooms-sse",
+  "version": "1.0.0",
+  "description": "little simulation of Server Sent Events informing about a room. The server uses node.js for the SSE handling and the page is served by PHP, PostgreSQL handles the room database and redis is used to communicate between node.js and PHP",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PierrickBrun/Rooms-SSE.git"
+  },
+  "author": "Pierrick Brun",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/PierrickBrun/Rooms-SSE/issues"
+  },
+  "homepage": "https://github.com/PierrickBrun/Rooms-SSE#readme"
+}

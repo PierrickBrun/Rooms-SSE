@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Rooms</title>
+</head>
+
+<body>
+  <h1>Communication using Server Sent Events !</h1>
+  <time></time>
+  <div id="container">Loading ...</div>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+    var es = new EventSource("/sse");
+    // on message received we print all the data inside the #container div
+    es.addEventListener("rooms", function(event) {
+      var data = JSON.parse(event.data);
+      console.log(event.data);
+      var roomsList = "<dl>";
+      $.each(data.rooms, function(index, room) {
+        roomsList += "<dt>" + room['name'] + "</dt>\n" +
+          "<dd> Students : " + room['nb_students'] + "</dd>\n" +
+          "<dd> Temperature : " + room['temperature'] + "</dd>\n";
+      });
+      roomsList += "</dl>";
+      $('#container').html(roomsList);
+
+      $('time').html('Last Update:' + data.time);
+    });
+  </script>
+</body>
+
+</html>
